@@ -99,9 +99,9 @@ function datosEnvio(event) {
     localStorage.setItem('datosEnvio', datosJSON);
 }
 
-
 BotonAgregar.addEventListener("click", (e) => {
     limpiadora();
     agregarCarrito();
     localStorage.setItem("carrito", JSON.stringify(Compras));
 });
+
