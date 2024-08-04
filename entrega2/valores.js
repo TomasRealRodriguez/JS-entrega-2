@@ -1,0 +1,51 @@
+const Menu = [
+    {
+        id: 1,
+        nombre: 'Pichurina con papas',
+        precio: 3900,
+        img: "https://media-cdn.tripadvisor.com/media/photo-s/1c/27/a4/46/petto-di-pollo-alla-griglia.jpg"
+    },
+    {
+        id: 2,
+        nombre: 'Tacos',
+        precio: 2000,
+        img: "https://content.skyscnr.com/m/2dcd7d0e6f086057/original/GettyImages-186142785.jpg"
+    },
+    {
+        id: 3,
+        nombre: 'Hamburguesa',
+        precio: 3500,
+        img: "https://www.upmenu.com/wp-content/uploads/2022/08/comida-rapida-a-domicilo.jpg"
+    },
+    {
+        id: 4,
+        nombre: 'Menu Infantil',
+        precio: 3000,
+        img: "https://assets.delirec.com/images%2FeoOvaVL8h1UVOPY8FHH39BSwtep2%2Frecipe%2F2d4a6707-2e63-4137-8b26-cf900d6bb36d-Comida-divertida-palha%C3%A7o--gallery-0"
+    },
+    {
+        id: 5,
+        nombre: 'Burritos',
+        precio: 4500,
+        img: "https://fotografias.larazon.es/clipping/cmsimages01/2023/11/16/080445F5-DC20-409E-A8B9-498C90C12C90/dieta-mexicana-reduce-inflamacion-colesterol-malo-debido-sus-componentes_98.jpg?crop=1280,720,x0,y0&width=1900&height=1069&optimize=low&format=webply"
+    },
+    {
+        id: 6,
+        nombre: 'Pizza',
+        precio: 2700,
+        img: "https://www.foodandwine.com/thmb/Wd4lBRZz3X_8qBr69UOu2m7I2iw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg"
+    },
+    {
+        id: 7,
+        nombre: 'Ramen',
+        precio: 4200,
+        img: "https://okdiario.com/img/2021/03/10/recetas-chinas-655x368.jpg"
+    },
+    {
+        id: 8,
+        nombre: 'Empanadas x6',
+        precio: 5000,
+        img: "https://assets.elgourmet.com/wp-content/uploads/2023/03/cover_fpa6sn8vqc_empanadas.jpg"
+    },
+    
+];
