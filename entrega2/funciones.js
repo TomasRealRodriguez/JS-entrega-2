@@ -62,7 +62,6 @@ Carta.addEventListener("click", (e) => {
     }
 });
 
-// Función cambiar la cantidad de productos en el carrito
 Carrito.addEventListener("click", (e) => {
     if (e.target.classList.contains("carritoMas")) {
         const id = e.target.parentElement.parentElement.id;
@@ -98,9 +97,6 @@ function datosEnvio(event) {
     const datosJSON = JSON.stringify(datos);
 
     localStorage.setItem('datosEnvio', datosJSON);
-
-    // Opcional: Mostrar un mensaje de confirmación o realizar otras acciones
-    console.log('Datos de envío guardados en localStorage:', datos);
 }
 
 
