@@ -17,8 +17,8 @@ Menu.forEach((el) => {
 function agregarCarrito() {
     Carrito.innerHTML = '';
     Compras.forEach(el => {
-        Carrito.innerHTML += 
-        `<div id=${el.id}>
+        Carrito.innerHTML +=
+            `<div id=${el.id}>
         <p>
             <button class="carritoMas">+</button>
             ${el.cantidad}
@@ -50,14 +50,23 @@ Carta.addEventListener("click", (e) => {
             nombre: producto.querySelector("h3").textContent,
             precio: parseFloat(producto.querySelector("p").textContent),
         };
+        Swal.fire({
+            title: "¡Agregado al pedido!",
+            imageUrl: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm5jdHl3cm5wN3IxcGdzMHl5bDJydW1mYzk4ajR3MzFrNHdiMHBxaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b5Hcaz7EPz26I/giphy.webp",
+            toast: true,
+            showConfirmButton: false,
+            position: 'bottom-end',
+            timerProgressBar: true,
+            timer: 3000,
 
+        })
         const index = Compras.findIndex(p => p.id === productoAgregado.id);
         if (index === -1) {
             Compras.push(productoAgregado);
         } else {
             Compras[index].cantidad += 1;
         }
-        
+
         console.log(Compras);
     }
 });
@@ -85,7 +94,7 @@ Carrito.addEventListener("click", (e) => {
 });
 
 function datosEnvio(event) {
-    event.preventDefault();  
+    event.preventDefault();
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
 
@@ -94,14 +103,29 @@ function datosEnvio(event) {
         email: email
     };
 
-    const datosJSON = JSON.stringify(datos);
+    Swal.fire({
+        title: "¡Pedido despachado!",
+        text: "En instantes te llegara un correo con los detalles de tu pedido",
+        confirmButtonText: "¡Genial!",
+        confirmButtonColor: "#45a049",
+        imageUrl: "https://media1.tenor.com/m/U_B0aizw05UAAAAd/sanji-sanji-vin-smoke.gif",
 
+    })
+
+    const datosJSON = JSON.stringify(datos);
     localStorage.setItem('datosEnvio', datosJSON);
 }
+
+
 
 BotonAgregar.addEventListener("click", (e) => {
     limpiadora();
     agregarCarrito();
     localStorage.setItem("carrito", JSON.stringify(Compras));
+
 });
 
+submit.addEventListener("click", () => {
+    ;
+
+});
