@@ -4,29 +4,42 @@ const BotonAgregar = document.getElementById("BotonAgregar");
 
 let Compras = [];
 
-Menu.forEach((el) => {
-    Carta.innerHTML += `<div id=${el.id}>
-    <h3>${el.nombre}</h3>
-    <p>${el.precio}</p>
-    <img src="${el.img}"/>
-    <button class="agregarCarrito">Agregar al pedido</button>
-    </div>`;
-});
+async function MostrarMenu() {
+    try {
+        const datosMenu = await fetch('datos.json');
+        if (!datosMenu.ok) {
+            throw new Error('Error al cargar el archivo JSON');
+        }
+        const Menu = await datosMenu.json();
 
+        Menu.forEach((el) => {
+            Carta.innerHTML += `<div id="${el.id}">
+                <h3>${el.nombre}</h3>
+                <p>$${el.precio}</p>
+                <img src="${el.img}" alt="${el.nombre}"/>
+                <button class="agregarCarrito">Agregar al pedido</button>
+            </div>`;
+        });
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+MostrarMenu();
 
 function agregarCarrito() {
     Carrito.innerHTML = '';
     Compras.forEach(el => {
         Carrito.innerHTML +=
-            `<div id=${el.id}>
-        <p>
-            <button class="carritoMas">+</button>
-            ${el.cantidad}
-            <button class="carritoMenos">-</button>
-        </p>
-        <p>${el.nombre}</p>
-        <p>${el.precio}</p>
-        </div>`;
+            `<div id="${el.id}">
+                <p>
+                    <button class="carritoMas">+</button>
+                    ${el.cantidad}
+                    <button class="carritoMenos">-</button>
+                </p>
+                <p>${el.nombre}</p>
+                <p>${el.precio}</p>
+            </div>`;
     });
 
     Carrito.innerHTML += `<p>Total: $${calcularMontoTotal()}</p>`;
@@ -40,7 +53,6 @@ function limpiadora() {
     Carrito.innerHTML = '';
 }
 
-// Función para agregar productos al carrito
 Carta.addEventListener("click", (e) => {
     if (e.target.classList.contains("agregarCarrito")) {
         const producto = e.target.parentElement;
@@ -48,8 +60,9 @@ Carta.addEventListener("click", (e) => {
             id: producto.id,
             cantidad: 1,
             nombre: producto.querySelector("h3").textContent,
-            precio: parseFloat(producto.querySelector("p").textContent),
+            precio: parseFloat(producto.querySelector("p").textContent.replace('$', '')),
         };
+
         Swal.fire({
             title: "¡Agregado al pedido!",
             imageUrl: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm5jdHl3cm5wN3IxcGdzMHl5bDJydW1mYzk4ajR3MzFrNHdiMHBxaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b5Hcaz7EPz26I/giphy.webp",
@@ -58,8 +71,8 @@ Carta.addEventListener("click", (e) => {
             position: 'bottom-end',
             timerProgressBar: true,
             timer: 3000,
+        });
 
-        })
         const index = Compras.findIndex(p => p.id === productoAgregado.id);
         if (index === -1) {
             Compras.push(productoAgregado);
@@ -109,23 +122,16 @@ function datosEnvio(event) {
         confirmButtonText: "¡Genial!",
         confirmButtonColor: "#45a049",
         imageUrl: "https://media1.tenor.com/m/U_B0aizw05UAAAAd/sanji-sanji-vin-smoke.gif",
-
-    })
+    });
 
     const datosJSON = JSON.stringify(datos);
     localStorage.setItem('datosEnvio', datosJSON);
 }
 
-
-
-BotonAgregar.addEventListener("click", (e) => {
+BotonAgregar.addEventListener("click", () => {
     limpiadora();
     agregarCarrito();
     localStorage.setItem("carrito", JSON.stringify(Compras));
-
 });
 
-submit.addEventListener("click", () => {
-    ;
-
-});
+document.getElementById("submit").addEventListener("click", datosEnvio);
