@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+
+    <title>Restaurante Baratie</title>
+</head>
+
+<body>
+    <header> <img src="./imagenes/food_facebook_cover_17.jpg" alt="placeholder de lugar de comidas"></header>
+
+    <div id="Titulo">
+        <div>
+            <h1><em><strong>"Restaurante Baratie"</strong></em></h1>
+        </div>
+        <div>
+            <em><strong>
+                    <h2>¿Con que te queres tentar hoy?</h2>
+                </strong></em>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="contenedores">
+        <div id="Carta"> </div>
+    </div>
+    </div>
+
+    <div id="BotonAgregar" class="BotonAgregar">
+        <div><button>
+                <h3>Ver el pedido</h3><img src="./imagenes/carrito-de-compras.png" alt="Imagen de un carrito de compras">
+            </button></div>
+        <div id="Carrito" class="Carrito"></div>
+    </div>
+
+    <div>
+        <form id="datosEnvio" class="datosEnvio" onsubmit="datosEnvio(event)">
+
+            <label for="nombre">Pedido a nombre de:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email de contacto:</label>
+            <input type="text" id="email" name="email" required>
+
+            <input type="submit" value="Enviar Pedido" class="EnviarPedido">
+
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./funciones.js"></script>
+</body>
+
+</html>

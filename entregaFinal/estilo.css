@@ -1,0 +1,199 @@
+ @charset "UTF-8"; 
+/*Variables*/
+@import url("https://fonts.googleapis.com/css2?family=Della+Respira&display=swap");
+
+ p,h1,h2,h3 {
+    font-family: "Della Respira", serif;
+    color: black;
+}
+
+h1 {
+    
+    font-family: "Della Respira", serif;
+    text-align: center;
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+    text-shadow: 3px 1px 4px rgba(0, 0, 0, 0.52);
+
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+header img {
+    max-width: 100%;
+}
+
+/* título */
+#Titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#Titulo h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+#Titulo h1 em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+#Titulo h2 {
+    font-size: 1.5em;
+    margin: 0;
+
+}
+
+/* Menú */
+#Menu {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#Menu h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Contenedor de la carta */
+.contenedores {
+    display: flex;
+    justify-content: center;
+}
+
+#Carta {
+    display: grid;
+    grid-template-columns: repeat(4, 15fr); 
+    gap: 20px;
+    justify-items: center; 
+}
+
+#Carta div {
+    width: 100%; 
+    max-width: 150px; 
+    padding: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#Carta h3 {
+    margin: 5px 0;
+}
+
+#Carta p {
+    margin: 5px 0;
+}
+
+#Carta img {
+    max-width: 100%;
+}
+
+#Carta button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#Carta button:hover {
+    background-color: #45a049;
+}
+
+/* Botón Agregar al carrito y Carrito */
+#BotonAgregar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#BotonAgregar h3{
+    color: white;
+
+}
+
+#BotonAgregar button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#BotonAgregar button img {
+    vertical-align: middle;
+    max-width: 20px;
+}
+
+#Carrito {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#Carrito div {
+    margin-bottom: 10px;
+}
+
+#Carrito p {
+    margin: 5px 0;
+}
+
+/* Formulario */
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], form input[type="submit"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
